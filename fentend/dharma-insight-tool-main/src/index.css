@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 25% 96%;
+    --foreground: 25 30% 12%;
+
+    --card: 35 30% 98%;
+    --card-foreground: 25 30% 12%;
+
+    --popover: 35 30% 98%;
+    --popover-foreground: 25 30% 12%;
+
+    --primary: 35 80% 45%;
+    --primary-foreground: 35 30% 98%;
+
+    --secondary: 25 20% 90%;
+    --secondary-foreground: 25 30% 20%;
+
+    --muted: 30 15% 92%;
+    --muted-foreground: 25 12% 50%;
+
+    --accent: 15 70% 50%;
+    --accent-foreground: 35 30% 98%;
+
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 30 20% 85%;
+    --input: 30 20% 85%;
+    --ring: 35 80% 45%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens */
+    --saffron: 35 90% 55%;
+    --saffron-glow: 30 95% 65%;
+    --deep-maroon: 0 40% 25%;
+    --sacred-gold: 42 85% 55%;
+    --lotus-pink: 340 50% 65%;
+    --sky-divine: 210 40% 55%;
+    --parchment: 38 40% 92%;
+    --verse-bg: 38 35% 95%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(25 30% 12% / 0.85), hsl(0 40% 25% / 0.7));
+    --gradient-saffron: linear-gradient(135deg, hsl(35 90% 55%), hsl(30 95% 65%));
+    --gradient-sacred: linear-gradient(135deg, hsl(35 80% 45%), hsl(42 85% 55%));
+    --shadow-warm: 0 8px 32px -8px hsl(35 80% 45% / 0.25);
+    --shadow-card: 0 4px 20px -4px hsl(25 30% 12% / 0.08);
+
+    --font-display: 'Cinzel', serif;
+    --font-body: 'Lora', serif;
+    --font-ui: 'Inter', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 25 20% 8%;
+    --foreground: 35 20% 90%;
+    --card: 25 20% 12%;
+    --card-foreground: 35 20% 90%;
+    --popover: 25 20% 12%;
+    --popover-foreground: 35 20% 90%;
+    --primary: 35 80% 50%;
+    --primary-foreground: 25 30% 8%;
+    --secondary: 25 15% 18%;
+    --secondary-foreground: 35 20% 85%;
+    --muted: 25 15% 18%;
+    --muted-foreground: 30 12% 55%;
+    --accent: 15 70% 50%;
+    --accent-foreground: 35 30% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 25 15% 22%;
+    --input: 25 15% 22%;
+    --ring: 35 80% 50%;
+    --verse-bg: 25 20% 14%;
+    --parchment: 25 20% 14%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .text-gradient-sacred {
+    background: linear-gradient(135deg, hsl(var(--saffron)), hsl(var(--sacred-gold)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Decorative Om symbol animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
